@@ -1,6 +1,13 @@
 class App {
   constructor() {
     this.container = document.getElementById('app');
+
+    const taskList = document.createElement('ul');
+
+    taskList.classList.add('task-list');
+
+    this.taskListContainer = taskList;
+    this.container.replaceWith(this.taskListContainer);
   }
 
   addToDo(task) {
@@ -15,7 +22,7 @@ class App {
     checkbox.checked = task.done;
 
     item.append(checkbox);
-    this.container.append(item);
+    this.taskListContainer.append(item);
   }
 }
 
@@ -23,5 +30,9 @@ const myToDo = new App();
 myToDo.addToDo({
   text: 'buy bred',
   done: false,
+});
+myToDo.addToDo({
+  text: 'checking',
+  done: true,
 });
 console.log(myToDo);
