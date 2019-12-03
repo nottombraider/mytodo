@@ -8,7 +8,10 @@ class App {
     const checkbox = document.createElement('input');
 
     item.textContent = task.text;
+    item.classList.add('task-item');
+
     checkbox.type = 'checkbox';
+    checkbox.classList.add('task-item-checkbox');
     checkbox.checked = task.done;
 
     item.append(checkbox);
