@@ -24,6 +24,15 @@ class App {
     item.append(checkbox);
     this.taskListContainer.append(item);
   }
+
+  // eslint-disable-next-line class-methods-use-this
+  removeToDos() {
+    const checked = document.querySelectorAll('input[type=checkbox]:checked');
+
+    checked.forEach((item) => {
+      item.parentElement.remove();
+    });
+  }
 }
 
 const myToDo = new App();
@@ -35,4 +44,4 @@ myToDo.addToDo({
   text: 'checking',
   done: true,
 });
-console.log(myToDo);
+myToDo.removeToDos();
