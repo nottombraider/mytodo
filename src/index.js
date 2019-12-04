@@ -7,6 +7,8 @@ class App {
     const inputTaskField = document.createElement('input');
 
     taskList.classList.add('task-list');
+    buttonAddNewTask.classList.add('button-add-new-task');
+    inputTaskField.classList.add('input-task-field');
 
     buttonAddNewTask.innerHTML = 'Add new task';
     inputTaskField.type = 'text';
