@@ -5,20 +5,24 @@ class App {
     const taskList = document.createElement('ul');
     const buttonAddNewTask = document.createElement('button');
     const inputTaskField = document.createElement('input');
+    const buttonDeleteCompletedTasks = document.createElement('button');
 
     taskList.classList.add('task-list');
     buttonAddNewTask.classList.add('button-add-new-task');
     inputTaskField.classList.add('input-task-field');
+    buttonDeleteCompletedTasks.classList.add('button-delete-completed-tasks');
 
     buttonAddNewTask.innerHTML = 'Add new task';
     inputTaskField.type = 'text';
     inputTaskField.placeholder = 'Write here your task';
+    buttonDeleteCompletedTasks.innerHTML = 'Delete completed tasks';
     this.container.innerHTML = '';
 
     this.taskListContainer = taskList;
     this.container.appendChild(this.taskListContainer);
     this.container.appendChild(inputTaskField);
     this.container.appendChild(buttonAddNewTask);
+    this.container.appendChild(buttonDeleteCompletedTasks);
   }
 
 
