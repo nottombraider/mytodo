@@ -3,12 +3,22 @@ class App {
     this.container = document.getElementById('app');
 
     const taskList = document.createElement('ul');
+    const buttonAddNewTask = document.createElement('button');
+    const inputTaskField = document.createElement('input');
 
     taskList.classList.add('task-list');
 
+    buttonAddNewTask.innerHTML = 'Add new task';
+    inputTaskField.type = 'text';
+    inputTaskField.placeholder = 'Write here your task';
+    this.container.innerHTML = '';
+
     this.taskListContainer = taskList;
-    this.container.replaceWith(this.taskListContainer);
+    this.container.appendChild(this.taskListContainer);
+    this.container.appendChild(inputTaskField);
+    this.container.appendChild(buttonAddNewTask);
   }
+
 
   addToDo(task) {
     const item = document.createElement('li');
