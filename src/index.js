@@ -19,8 +19,7 @@ class App {
       } else {
         alert('To Do cannot be empty');
       }
-
-    })
+    });
 
 
     taskList.classList.add('task-list');
