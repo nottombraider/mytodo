@@ -1,3 +1,57 @@
 body{
-  background-color: lightcyan;
+  margin: 0;
+}
+
+.app-container{
+  width: 100%;
+  background-color: #0ad4ce;
+}
+
+#app{
+  background-color: #fff;
+  border-radius: 20px 20px 0;
+  height: 100%;
+}
+
+.flex{
+  display: flex;
+}
+
+.main-header{
+  justify-content: space-evenly;
+  color: #fff;
+  padding: 60px 0 10px;
+}
+
+.to-do-list-icon{
+  width: 40px;
+  height: 40px;
+  align-self: center;
+}
+
+.task-list{
+  margin: 0 20px;
+  padding: 20px 15px 0;
+  list-style: none;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.button-add-new-task{
+
+}
+
+.input-task-field{
+
+}
+
+.button-delete-completed-tasks{
+
+}
+
+.task-item{
+  justify-content: space-between;
+}
+
+.task-item-checkbox{
+
 }

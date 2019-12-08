@@ -31,7 +31,7 @@ class App {
     const checkbox = document.createElement('input');
 
     item.textContent = task.text;
-    item.classList.add('task-item');
+    item.classList.add('task-item', 'flex');
 
     checkbox.type = 'checkbox';
     checkbox.classList.add('task-item-checkbox');
