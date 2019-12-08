@@ -21,6 +21,8 @@ class App {
       }
     });
 
+    buttonDeleteCompletedTasks.addEventListener('click', this.removeToDos);
+
 
     taskList.classList.add('task-list');
     buttonDeleteCompletedTasks.classList.add('button-delete-completed-tasks', 'button-color');
