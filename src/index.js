@@ -10,14 +10,16 @@ class App {
 
 
     taskList.classList.add('task-list');
-    buttonAddNewTask.classList.add('button-add-new-task');
-    inputTaskField.classList.add('input-task-field');
+    buttonDeleteCompletedTasks.classList.add('button-delete-completed-tasks', 'button-color');
+    addTask.classList.add('add-task', 'flex');
+    buttonAddNewTask.classList.add('button-add-new-task', 'button-color');
+    inputTaskField.classList.add('input-task-field', 'button-line');
     this.container.classList.add('app', 'flex');
 
 
-    buttonAddNewTask.innerHTML = 'Add new task';
+    buttonAddNewTask.innerHTML = '+';
     inputTaskField.type = 'text';
-    inputTaskField.placeholder = 'Write here your task';
+    inputTaskField.placeholder = 'Write here a new task';
     buttonDeleteCompletedTasks.innerHTML = 'Delete completed tasks';
     this.container.innerHTML = '';
 
@@ -36,7 +38,7 @@ class App {
     const checkbox = document.createElement('input');
 
     item.textContent = task.text;
-    item.classList.add('task-item', 'flex');
+    item.classList.add('task-item', 'button-line', 'flex');
 
     checkbox.type = 'checkbox';
     checkbox.classList.add('task-item-checkbox');
