@@ -1,18 +1,27 @@
+html{
+  height: 100%;
+}
+
 body{
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  height: 100%;
 }
 
 .app-container{
-  width: 100%;
+  max-width: 425px;
+  margin: 0 auto;
+  height: 100%;
   background-color: #0ad4ce;
   font-size: 1rem;
+  box-shadow: 0 0 20px #69dcd9;
 }
 
 .app{
   background-color: #fff;
   border-radius: 20px 20px 0 0;
   flex-direction: column;
+  height: 75%;
 }
 
 .flex{
