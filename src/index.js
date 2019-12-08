@@ -3,6 +3,7 @@ class App {
     this.container = document.getElementById('app');
 
     const taskList = document.createElement('ul');
+    const addTask = document.createElement('div');
     const buttonAddNewTask = document.createElement('button');
     const inputTaskField = document.createElement('input');
     const buttonDeleteCompletedTasks = document.createElement('button');
@@ -19,10 +20,12 @@ class App {
     this.container.innerHTML = '';
 
     this.taskListContainer = taskList;
+    this.addNewTaskContainer = addTask;
     this.container.appendChild(this.taskListContainer);
-    this.container.appendChild(inputTaskField);
-    this.container.appendChild(buttonAddNewTask);
+    this.container.appendChild(this.addNewTaskContainer);
     this.container.appendChild(buttonDeleteCompletedTasks);
+    this.addNewTaskContainer.appendChild(inputTaskField);
+    this.addNewTaskContainer.appendChild(buttonAddNewTask);
   }
 
 
