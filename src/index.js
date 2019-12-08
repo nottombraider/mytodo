@@ -26,9 +26,9 @@ class App {
       this.removeToDos();
     });
 
-
+    this.buttonDeleteCompleted = buttonDeleteCompletedTasks;
     taskList.classList.add('task-list');
-    buttonDeleteCompletedTasks.classList.add('button-delete-completed-tasks', 'button-color');
+    buttonDeleteCompletedTasks.classList.add('button-delete-completed-tasks', 'button-color', 'hidden');
     addTask.classList.add('add-task', 'flex');
     buttonAddNewTask.classList.add('button-add-new-task', 'button-color');
     inputTaskField.classList.add('input-task-field', 'button-line');
@@ -42,12 +42,12 @@ class App {
     this.container.innerHTML = '';
 
     this.taskListContainer = taskList;
-    this.addNewTaskContainer = addTask;
+    addTask.appendChild(inputTaskField);
+    addTask.appendChild(buttonAddNewTask);
+    this.container.appendChild(addTask);
     this.container.appendChild(this.taskListContainer);
     this.container.appendChild(buttonDeleteCompletedTasks);
-    this.container.appendChild(this.addNewTaskContainer);
-    this.addNewTaskContainer.appendChild(inputTaskField);
-    this.addNewTaskContainer.appendChild(buttonAddNewTask);
+
   }
 
 
@@ -63,6 +63,11 @@ class App {
 
   render() {
     this.taskListContainer.innerHTML = '';
+    if (this.taskList.length) {
+      this.buttonDeleteCompleted.classList.remove('hidden');
+    } else {
+      this.buttonDeleteCompleted.classList.add('hidden');
+    }
     this.taskList.forEach((task) => {
       const itemContainer = document.createElement('li');
       const checkbox = document.createElement('input');
