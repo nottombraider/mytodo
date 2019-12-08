@@ -12,6 +12,8 @@ class App {
     buttonAddNewTask.classList.add('button-add-new-task');
     inputTaskField.classList.add('input-task-field');
     buttonDeleteCompletedTasks.classList.add('button-delete-completed-tasks');
+    this.container.classList.add('app', 'flex');
+
 
     buttonAddNewTask.innerHTML = 'Add new task';
     inputTaskField.type = 'text';
