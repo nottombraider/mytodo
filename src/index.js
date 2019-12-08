@@ -1,6 +1,7 @@
 class App {
   constructor() {
     this.container = document.getElementById('app');
+    this.taskList = [];
 
     const taskList = document.createElement('ul');
     const buttonDeleteCompletedTasks = document.createElement('button');
@@ -21,7 +22,9 @@ class App {
       }
     });
 
-    buttonDeleteCompletedTasks.addEventListener('click', this.removeToDos);
+    buttonDeleteCompletedTasks.addEventListener('click', () => {
+      this.removeToDos();
+    });
 
 
     taskList.classList.add('task-list');
@@ -49,26 +52,37 @@ class App {
 
 
   addToDo(task) {
-    const item = document.createElement('li');
-    const checkbox = document.createElement('input');
-
-    item.textContent = task.text;
-    item.classList.add('task-item', 'button-line', 'flex');
-
-    checkbox.type = 'checkbox';
-    checkbox.classList.add('task-item-checkbox');
-    checkbox.checked = task.done;
-
-    item.append(checkbox);
-    this.taskListContainer.append(item);
+    this.taskList.push(task);
+    this.render();
   }
 
-  // eslint-disable-next-line class-methods-use-this
   removeToDos() {
-    const checked = document.querySelectorAll('input[type=checkbox]:checked');
+    this.taskList = this.taskList.filter((item) => !item.done);
+    this.render();
+  }
 
-    checked.forEach((item) => {
-      item.parentElement.remove();
+  render() {
+    this.taskListContainer.innerHTML = '';
+    this.taskList.forEach((task) => {
+      const itemContainer = document.createElement('li');
+      const checkbox = document.createElement('input');
+
+      itemContainer.textContent = task.text;
+      itemContainer.classList.add('task-item', 'button-line', 'flex');
+
+      checkbox.type = 'checkbox';
+      checkbox.classList.add('task-item-checkbox');
+      checkbox.checked = task.done;
+
+      checkbox.addEventListener('change', (event) => {
+        const index = this.taskList.indexOf(task);
+        const activeTask = this.taskList[index];
+
+        activeTask.done = event.target.checked;
+      });
+
+      itemContainer.append(checkbox);
+      this.taskListContainer.append(itemContainer);
     });
   }
 }
