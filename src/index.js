@@ -3,15 +3,15 @@ class App {
     this.container = document.getElementById('app');
 
     const taskList = document.createElement('ul');
+    const buttonDeleteCompletedTasks = document.createElement('button');
     const addTask = document.createElement('div');
     const buttonAddNewTask = document.createElement('button');
     const inputTaskField = document.createElement('input');
-    const buttonDeleteCompletedTasks = document.createElement('button');
+
 
     taskList.classList.add('task-list');
     buttonAddNewTask.classList.add('button-add-new-task');
     inputTaskField.classList.add('input-task-field');
-    buttonDeleteCompletedTasks.classList.add('button-delete-completed-tasks');
     this.container.classList.add('app', 'flex');
 
 
@@ -24,8 +24,8 @@ class App {
     this.taskListContainer = taskList;
     this.addNewTaskContainer = addTask;
     this.container.appendChild(this.taskListContainer);
-    this.container.appendChild(this.addNewTaskContainer);
     this.container.appendChild(buttonDeleteCompletedTasks);
+    this.container.appendChild(this.addNewTaskContainer);
     this.addNewTaskContainer.appendChild(inputTaskField);
     this.addNewTaskContainer.appendChild(buttonAddNewTask);
   }
