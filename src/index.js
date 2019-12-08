@@ -8,6 +8,20 @@ class App {
     const buttonAddNewTask = document.createElement('button');
     const inputTaskField = document.createElement('input');
 
+    buttonAddNewTask.addEventListener('click', () => {
+      const text = inputTaskField.value;
+      if (text.length) {
+        const task = {
+          text,
+          done: false,
+        };
+        this.addToDo(task);
+      } else {
+        alert('To Do cannot be empty');
+      }
+
+    })
+
 
     taskList.classList.add('task-list');
     buttonDeleteCompletedTasks.classList.add('button-delete-completed-tasks', 'button-color');
@@ -59,12 +73,4 @@ class App {
 }
 
 const myToDo = new App();
-myToDo.addToDo({
-  text: 'buy bred',
-  done: false,
-});
-myToDo.addToDo({
-  text: 'checking',
-  done: true,
-});
-myToDo.removeToDos();
+console.log(myToDo);
