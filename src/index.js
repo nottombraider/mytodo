@@ -42,12 +42,12 @@ class App {
     this.container.innerHTML = '';
 
     this.taskListContainer = taskList;
-    addTask.appendChild(inputTaskField);
+    this.inputTaskField = inputTaskField;
+    addTask.appendChild(this.inputTaskField);
     addTask.appendChild(buttonAddNewTask);
     this.container.appendChild(addTask);
     this.container.appendChild(this.taskListContainer);
     this.container.appendChild(buttonDeleteCompletedTasks);
-
   }
 
 
@@ -70,11 +70,13 @@ class App {
     }
     this.taskList.forEach((task) => {
       const itemContainer = document.createElement('li');
+      const itemTextBox = document.createElement('input');
       const checkbox = document.createElement('input');
 
-      itemContainer.textContent = task.text;
       itemContainer.classList.add('task-item', 'button-line', 'flex');
+      itemTextBox.classList.add('input-task-field');
 
+      itemTextBox.value = task.text;
       checkbox.type = 'checkbox';
       checkbox.classList.add('task-item-checkbox');
       checkbox.checked = task.done;
@@ -85,10 +87,16 @@ class App {
 
         activeTask.done = event.target.checked;
       });
+      itemTextBox.addEventListener('input', (event) => {
+        // eslint-disable-next-line no-param-reassign
+        task.text += event.data;
+      });
 
+      itemContainer.append(itemTextBox);
       itemContainer.append(checkbox);
       this.taskListContainer.append(itemContainer);
     });
+    this.inputTaskField.value = '';
   }
 }
 
