@@ -3,7 +3,7 @@ import { createTaskListItemMarkup } from './handlers';
 class App {
   constructor() {
     this.container = document.getElementById('app');
-    this.taskList = [];
+
 
     const taskList = document.createElement('ul');
     const buttonDeleteCompletedTasks = document.createElement('button');
@@ -51,16 +51,37 @@ class App {
     this.container.appendChild(addTask);
     this.container.appendChild(this.taskListContainer);
     this.container.appendChild(buttonDeleteCompletedTasks);
+
+    if (localStorage.toDoTaskList.length) {
+      this.taskList = this.getTaskListFromLocalStorage();
+      this.render();
+    } else {
+      this.taskList = [];
+    }
   }
 
+  saveTaskListToLocalStorage() {
+    if (this.taskList.length) {
+      const taskListStr = JSON.stringify(this.taskList);
+      localStorage.setItem('toDoTaskList', taskListStr);
+    }
+  }
+
+  getTaskListFromLocalStorage() {
+    const dataFromLocalStorage = localStorage.getItem('toDoTaskList');
+    this.taskList = JSON.parse(dataFromLocalStorage);
+    return this.taskList;
+  }
 
   addToDo(task) {
     this.taskList.push(task);
+    this.saveTaskListToLocalStorage();
     this.render();
   }
 
   removeToDos() {
     this.taskList = this.taskList.filter((item) => !item.done);
+    this.saveTaskListToLocalStorage();
     this.render();
   }
 
@@ -76,5 +97,5 @@ class App {
   }
 }
 
-const myToDo = new App();
-console.log(myToDo);
+// eslint-disable-next-line no-new
+new App();
