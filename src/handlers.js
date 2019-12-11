@@ -20,6 +20,7 @@ export const createTaskListItemMarkup = (context) => (task) => {
   itemTextBox.addEventListener('input', (event) => {
     // eslint-disable-next-line no-param-reassign
     task.text += event.data;
+    context.saveTaskListToLocalStorage();
   });
 
   itemContainer.append(itemTextBox);
