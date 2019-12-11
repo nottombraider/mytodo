@@ -3,6 +3,7 @@ import { createTaskListItemMarkup } from './handlers';
 class App {
   constructor() {
     this.container = document.getElementById('app');
+    this.taskList = [];
     this.localStorageKey = 'toDoTaskList';
 
     const taskList = document.createElement('ul');
@@ -51,8 +52,7 @@ class App {
     this.container.appendChild(addTask);
     this.container.appendChild(this.taskListContainer);
     this.container.appendChild(buttonDeleteCompletedTasks);
-
-    this.taskList = this.getTaskListFromLocalStorage();
+    this.getTaskListFromLocalStorage();
     this.render();
   }
 
@@ -65,9 +65,7 @@ class App {
     const dataFromLocalStorage = localStorage.getItem(this.localStorageKey);
     if (dataFromLocalStorage && dataFromLocalStorage.length) {
       this.taskList = JSON.parse(dataFromLocalStorage);
-      return this.taskList;
     }
-    return [];
   }
 
   addToDo(task) {
