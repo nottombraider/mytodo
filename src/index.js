@@ -4,6 +4,7 @@ class App {
   constructor() {
     this.container = document.getElementById('app');
     this.taskList = [];
+    this.localStorageKey = 'toDoTaskList';
 
     const taskList = document.createElement('ul');
     const buttonDeleteCompletedTasks = document.createElement('button');
@@ -51,17 +52,32 @@ class App {
     this.container.appendChild(addTask);
     this.container.appendChild(this.taskListContainer);
     this.container.appendChild(buttonDeleteCompletedTasks);
+    this.getTaskListFromLocalStorage();
+    this.render();
   }
 
+  saveTaskListToLocalStorage() {
+    const taskListStr = JSON.stringify(this.taskList);
+    localStorage.setItem('toDoTaskList', taskListStr);
+  }
+
+  getTaskListFromLocalStorage() {
+    const dataFromLocalStorage = localStorage.getItem(this.localStorageKey);
+    if (dataFromLocalStorage && dataFromLocalStorage.length) {
+      this.taskList = JSON.parse(dataFromLocalStorage);
+    }
+  }
 
   addToDo(task) {
     this.taskList.push(task);
     this.render();
+    this.saveTaskListToLocalStorage();
   }
 
   removeToDos() {
     this.taskList = this.taskList.filter((item) => !item.done);
     this.render();
+    this.saveTaskListToLocalStorage();
   }
 
   render() {
@@ -76,5 +92,5 @@ class App {
   }
 }
 
-const myToDo = new App();
-console.log(myToDo);
+// eslint-disable-next-line no-new
+new App();
