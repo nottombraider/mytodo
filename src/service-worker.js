@@ -1,8 +1,6 @@
 
 const cachedURLs = [
   '/',
-  '/index.css',
-  '/index.js',
 ];
 
 const cacheName = 'myToDoCache';
