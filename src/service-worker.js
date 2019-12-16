@@ -15,6 +15,7 @@ self.addEventListener('install', (event) => {
       .then((cache) => {
         console.log('Opened cache');
         return cache.addAll(cachedURLs);
-      }),
+      })
+      .catch((err) => console.log(`Service Worker Err: ${err}`)),
   );
 });
