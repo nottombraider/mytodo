@@ -6,8 +6,12 @@
     "startURL": "/",
     "theme": "#add8e6",
     "generateIconOptions": {
-      "baseIcon": "img/icons/manifest_icon.png",
-      "sizes": [192, 384, 512],
+      "baseIcon": "./src/img/icons/manifest_icon.png",
+      "sizes": [
+        192,
+        384,
+        512
+      ],
       "genFavicons": true
     }
   },
@@ -35,9 +39,8 @@
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.19.1",
     "parcel-bundler": "^1.12.4",
+    "parcel-plugin-pwa-manifest": "^2.6.0",
+    "parcel-plugin-sw-asset-urls": "^0.1.2",
     "sass": "^1.23.7"
-  },
-  "dependencies": {
-    "parcel-plugin-pwa-manifest": "^2.6.0"
   }
 }
