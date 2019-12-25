@@ -1,0 +1,29 @@
+@import "colors";
+
+.button{
+  &-delete-completed-tasks{
+    margin: 50px auto 60px;
+    padding: 10px;
+    color: $baseWhite;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+
+  &-add-new-task{
+    border: none;
+    border-radius: 50%;
+    color: $baseWhite;
+    font-size: 1.5rem;
+    padding: 5px 15px 8px;
+    text-align: center;
+  }
+
+  &-line{
+    border-bottom: 1px solid #e9e9e9;
+  }
+
+  &-color{
+    background-color: #0abbb5;
+  }
+
+}

@@ -1,36 +1,27 @@
-html{
-  height: 100%;
-}
-
-body{
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  height: 100%;
-}
-
-.app-container{
-  max-width: 425px;
-  margin: 0 auto;
-  height: 100%;
-  background-color: #0ad4ce;
-  font-size: 1rem;
-  box-shadow: 0 0 20px #69dcd9;
-}
+@import "colors";
+@import 'utils';
+@import "task";
+@import 'buttons';
 
 .app{
-  background-color: #fff;
+  background-color: $baseWhite;
   border-radius: 20px 20px 0 0;
   flex-direction: column;
   height: 75%;
-}
 
-.flex{
-  display: flex;
+  &-container{
+    max-width: 425px;
+    margin: 0 auto;
+    height: 100%;
+    background-color: #0ad4ce;
+    font-size: 1rem;
+    box-shadow: 0 0 20px #69dcd9;
+  }
 }
 
 .main-header{
   justify-content: space-evenly;
-  color: #fff;
+  color: $baseWhite;
   padding: 60px 0 10px;
 }
 
@@ -40,56 +31,8 @@ body{
   align-self: center;
 }
 
-.task-list{
-  margin: 0 20px;
-  padding: 0;
-  list-style: none;
-  overflow: auto;
-}
-
-.button-delete-completed-tasks{
-  margin: 50px auto 60px;
-  padding: 10px;
-  color: #fff;
-  font-size: 1rem;
-  border-radius: 5px;
-}
-
-.hidden{
-  display: none;
-}
-
-
-.add-task{
-  margin: 15px 25px 40px;
-  justify-content: space-between;
-}
-
-.button-add-new-task{
-  border: none;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 1.5rem;
-  padding: 5px 15px 8px;
-  text-align: center;
-}
-
 .input-task-field{
   border: inherit;
   width: 80%;
   font-size: 1rem;
-}
-
-.task-item{
-  justify-content: space-between;
-  padding: 20px 15px 0;
-}
-
-
-.button-line{
-  border-bottom: 1px solid #e9e9e9;
-}
-
-.button-color{
-  background-color: #0abbb5;
 }

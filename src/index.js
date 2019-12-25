@@ -43,7 +43,7 @@ class App {
     this.buttonDeleteCompleted = buttonDeleteCompletedTasks;
     taskList.classList.add('task-list');
     buttonDeleteCompletedTasks.classList.add('button-delete-completed-tasks', 'button-color', 'hidden');
-    addTask.classList.add('add-task', 'flex');
+    addTask.classList.add('task-add', 'flex');
     buttonAddNewTask.classList.add('button-add-new-task', 'button-color');
     inputTaskField.classList.add('input-task-field', 'button-line');
     this.container.classList.add('app', 'flex');
