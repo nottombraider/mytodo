@@ -26,7 +26,9 @@
     "no-shadow": "off",
     "newline-after-var": "error",
     "newline-before-return": "error",
-    "complexity": [3, "error"],
-    "max-lines": [150, "error"]
+    "complexity": ["error", 2],
+    "max-lines": ["error", 150],
+    "padded-blocks": "error",
+    "no-multiple-empty-lines": ["error", { "max": 2 }]
   }
 }
