@@ -7,7 +7,7 @@ const AddTask = ({ addTask }) => (
       placeholder="Enter your task here"
       name="inputTaskField"
     />
-    <button>Add</button>
+    <button type="submit">Add</button>
   </form>
 );
 
