@@ -29,7 +29,9 @@ class MainLayout extends React.Component {
         },
       ],
     };
+
     this.updateTaskStatus = this.updateTaskStatus.bind(this);
+    this.addTask = this.addTask.bind(this);
   }
 
   updateTaskStatus(id, status) {
@@ -50,18 +52,52 @@ class MainLayout extends React.Component {
     });
   }
 
+  addTask(event) {
+    event.preventDefault();
+    const {
+      state: {
+        tasks,
+      },
+    } = this;
+    const {
+      target: {
+        elements: {
+          inputTaskField,
+        },
+      },
+    } = event;
+    const text = inputTaskField.value;
+
+    if (text.length) {
+      const task = {
+        id: new Date(),
+        text,
+        done: false,
+      };
+
+      inputTaskField.value = '';
+      const updatedTaskList = [...tasks, task];
+
+      this.setState({
+        tasks: updatedTaskList,
+      });
+    }
+  }
+
   render() {
     const {
       state: {
         tasks,
       },
       updateTaskStatus,
+      addTask,
     } = this;
 
     tasks.sort((taskA, taskB) => taskA.id - taskB.id);
+
     return (
       <main>
-        <AddTask />
+        <AddTask addTask={addTask} />
         <TaskList tasks={tasks} updateTaskStatus={updateTaskStatus} />
       </main>
     );
