@@ -1,5 +1,5 @@
 import React from 'react';
-import TaskListItem from './TaskListItem';
+import TaskList from './TaskList';
 
 class App extends React.Component {
   constructor(props) {
@@ -21,6 +21,11 @@ class App extends React.Component {
           text: 'rest',
           done: false,
         },
+        {
+          id: 1,
+          text: 'do it',
+          done: false,
+        },
       ],
     };
 
@@ -28,11 +33,16 @@ class App extends React.Component {
   }
 
   updateTaskStatus(id, status) {
-    const task = this.state.tasks.find((task) => task.id === id);
+    const {
+      state: {
+        tasks,
+      },
+    } = this;
+    const task = tasks.find((task) => task.id === id);
 
     task.done = status;
 
-    const filteredTasks = this.state.tasks.filter((task) => task.id !== id);
+    const filteredTasks = tasks.filter((task) => task.id !== id);
 
     filteredTasks.push(task);
     this.setState({
@@ -45,19 +55,12 @@ class App extends React.Component {
       state: {
         tasks,
       },
+      updateTaskStatus,
     } = this;
 
     tasks.sort((taskA, taskB) => taskA.id - taskB.id);
     return (
-      <ul>
-        {tasks.map((task) => (
-          <TaskListItem
-            task={task}
-            key={task.id}
-            toggleTaskStatus={this.updateTaskStatus}
-          />
-        ))}
-      </ul>
+      <TaskList tasks={tasks} updateTaskStatus={updateTaskStatus} />
     );
   }
 }
