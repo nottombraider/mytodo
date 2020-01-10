@@ -9,10 +9,10 @@ function TaskListItem(props) {
   const clickHandlerCheckbox = () => toggleTaskStatus(id, !done);
 
   return (
-    <div>
-      <span className={done ? 'crossed' : ''}>{text}</span>
+    <li className="flex task-item">
+      <span className="{done ? 'crossed' : ''}, task-text">{text}</span>
       <input type="checkbox" defaultChecked={done} onClick={clickHandlerCheckbox} />
-    </div>
+    </li>
   );
 }
 

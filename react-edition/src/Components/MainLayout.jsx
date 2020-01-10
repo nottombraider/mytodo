@@ -116,10 +116,13 @@ class MainLayout extends React.Component {
     tasks.sort((taskA, taskB) => taskA.id - taskB.id);
 
     return (
-      <main>
+      <main className="flex column wrap center main-layout">
         <AddTask addTask={addTask} />
         <TaskList tasks={tasks} updateTaskStatus={updateTaskStatus} />
-        <DeleteCompletedTasks hidden={(tasks.some((task) => task.done)) ? '' : 'hidden'} deleteCompletedTasks={deleteCompletedTasks} />
+        <DeleteCompletedTasks
+          hidden={(tasks.some((task) => task.done)) ? '' : 'hidden'}
+          deleteCompletedTasks={deleteCompletedTasks}
+        />
       </main>
     );
   }
