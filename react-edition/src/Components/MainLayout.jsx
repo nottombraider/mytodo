@@ -1,37 +1,43 @@
 import React from 'react';
 import AddTask from './AddTask';
 import TaskList from './TaskList';
+import DeleteCompletedTasks from './DeleteCompletedTasks';
+
+const LOCAL_STORAGE_KEY = 'toDoTaskList';
 
 class MainLayout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tasks: [
-        {
-          id: 5,
-          text: 'call mom',
-          done: true,
-        },
-        {
-          id: 7,
-          text: 'learn to code',
-          done: false,
-        },
-        {
-          id: 10,
-          text: 'rest',
-          done: false,
-        },
-        {
-          id: 1,
-          text: 'do it',
-          done: false,
-        },
-      ],
+      tasks: [],
     };
 
     this.updateTaskStatus = this.updateTaskStatus.bind(this);
     this.addTask = this.addTask.bind(this);
+    this.deleteCompletedTasks = this.deleteCompletedTasks.bind(this);
+  }
+
+  componentDidMount() {
+    const dataFromLocalStorage = localStorage.getItem(LOCAL_STORAGE_KEY);
+
+    if (dataFromLocalStorage) {
+      const tasks = JSON.parse(dataFromLocalStorage);
+
+      this.setState({
+        tasks,
+      });
+    }
+  }
+
+  componentDidUpdate() {
+    const {
+      state: {
+        tasks,
+      },
+    } = this;
+    const taskListStr = JSON.stringify(tasks);
+
+    localStorage.setItem(LOCAL_STORAGE_KEY, taskListStr);
   }
 
   updateTaskStatus(id, status) {
@@ -84,6 +90,19 @@ class MainLayout extends React.Component {
     }
   }
 
+  deleteCompletedTasks() {
+    const {
+      state: {
+        tasks,
+      },
+    } = this;
+    const undoneTasks = tasks.filter((task) => !task.done);
+
+    this.setState({
+      tasks: undoneTasks,
+    });
+  }
+
   render() {
     const {
       state: {
@@ -91,6 +110,7 @@ class MainLayout extends React.Component {
       },
       updateTaskStatus,
       addTask,
+      deleteCompletedTasks,
     } = this;
 
     tasks.sort((taskA, taskB) => taskA.id - taskB.id);
@@ -99,6 +119,7 @@ class MainLayout extends React.Component {
       <main>
         <AddTask addTask={addTask} />
         <TaskList tasks={tasks} updateTaskStatus={updateTaskStatus} />
+        <DeleteCompletedTasks tasks={tasks} deleteCompletedTasks={deleteCompletedTasks} />
       </main>
     );
   }
