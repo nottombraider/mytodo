@@ -119,7 +119,7 @@ class MainLayout extends React.Component {
       <main>
         <AddTask addTask={addTask} />
         <TaskList tasks={tasks} updateTaskStatus={updateTaskStatus} />
-        <DeleteCompletedTasks tasks={tasks} deleteCompletedTasks={deleteCompletedTasks} />
+        <DeleteCompletedTasks hidden={(tasks.some((task) => task.done)) ? '' : 'hidden'} deleteCompletedTasks={deleteCompletedTasks} />
       </main>
     );
   }

@@ -1,11 +1,7 @@
 import React from 'react';
 
-const DeleteCompletedTasks = ({ tasks, deleteCompletedTasks }) => {
-  if (tasks.some((task) => task.done)) {
-    return <button type="button" onClick={deleteCompletedTasks}>Delete Completed Tasks</button>;
-  }
-
-  return <></>;
-};
+const DeleteCompletedTasks = ({ hidden, deleteCompletedTasks }) => (
+  <button type="button" className={hidden} onClick={deleteCompletedTasks}>Delete Completed Tasks</button>
+);
 
 export default DeleteCompletedTasks;
