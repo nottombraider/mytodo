@@ -5,9 +5,9 @@ import MainFooter from './MainFooter';
 
 const App = () => (
   <>
-    <MainTitle title="To Do List" />
+    <MainTitle title="Do Things Done" />
     <MainLayout />
-    <MainFooter rights="@nottobraider" />
+    <MainFooter rights="@nottombraider" />
   </>
 );
 
