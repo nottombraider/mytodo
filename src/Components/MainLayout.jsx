@@ -75,8 +75,9 @@ class MainLayout extends React.Component {
     const text = inputTaskField.value;
 
     if (text.length) {
+      const currentDateSec = (new Date()).valueOf();
       const task = {
-        id: new Date(),
+        id: currentDateSec,
         text,
         done: false,
       };
@@ -116,7 +117,7 @@ class MainLayout extends React.Component {
     tasks.sort((taskA, taskB) => taskA.id - taskB.id);
 
     return (
-      <main className="flex column wrap center main-layout">
+      <main className=" main-layout">
         <AddTask addTask={addTask} />
         <TaskList tasks={tasks} updateTaskStatus={updateTaskStatus} />
         <DeleteCompletedTasks

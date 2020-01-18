@@ -1,8 +1,8 @@
 @import "colors";
 
 html{
+  font-size: 12px;
   height: 100%;
-  margin: 0;
 }
 
 body{
@@ -15,7 +15,6 @@ body{
 button{
   border: inherit;
   background-color: inherit;
-  margin: 1rem;
 }
 
 .root{
@@ -29,7 +28,7 @@ button{
 .footer-text{
   color: $baseWhite;
   text-align: right;
-  padding: .5rem;
+  padding: .5rem 2rem;
 }
 
 .gg-scale{

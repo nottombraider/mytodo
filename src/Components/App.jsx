@@ -5,7 +5,7 @@ import MainFooter from './MainFooter';
 
 const App = () => (
   <>
-    <MainTitle title="Do Things Done" />
+    <MainTitle title="DoDo" titleDescription="Do Things Done" />
     <MainLayout />
     <MainFooter rights="@nottombraider" />
   </>
