@@ -1,0 +1,65 @@
+@import "colors";
+
+html{
+  height: 100%;
+  margin: 0;
+}
+
+body{
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  color: $baseBlack;
+}
+
+button{
+  border: inherit;
+  background-color: inherit;
+  margin: 1rem;
+}
+
+.root{
+  margin: 0 auto;
+  max-width: 425px;
+  height: 100%;
+  background-color: $baseBlue;
+  box-shadow: 0 0 20px $baseBlue;
+}
+
+.footer-text{
+  color: $baseWhite;
+  text-align: right;
+  padding: .5rem;
+}
+
+.gg-scale{
+  transform: scale(var(--ggs,1.5));
+}
+
+.gg-custom-color{
+  color: $baseDarkerBlue;
+}
+
+.crossed{
+  text-decoration: line-through;
+}
+
+.hidden{
+  display: none;
+}
+
+.flex{
+  display: flex;
+}
+
+.center{
+  justify-content: center;
+}
+
+.column{
+  flex-direction: column;
+}
+
+.wrap{
+  flex-wrap: wrap;
+}
