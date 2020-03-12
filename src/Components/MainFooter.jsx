@@ -2,9 +2,9 @@ import React from 'react';
 
 const MainFooter = ({ rights }) => (
   <footer className="footer-text">
-    <span>
-      <strong>{rights}</strong>
-    </span>
+    <a href="https://github.com/nottombraider" className="rights-link">
+      {rights}
+    </a>
   </footer>
 );
 

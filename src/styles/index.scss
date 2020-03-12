@@ -76,3 +76,13 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
+.rights-link{
+  text-decoration: none;
+  color: $baseWhite;
+  font-size: 1.5rem;
+}
+
+.rights-link:hover{
+  text-decoration: underline;
+}
