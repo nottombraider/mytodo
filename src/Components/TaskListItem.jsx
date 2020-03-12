@@ -10,7 +10,7 @@ function TaskListItem(props) {
 
   return (
     <li className="flex task-item">
-      <span className="{done ? 'crossed' : ''}, task-text">{text}</span>
+      <span className={done ? 'crossed task-text' : 'task-text'}>{text}</span>
       <input type="checkbox" defaultChecked={done} onClick={clickHandlerCheckbox} />
     </li>
   );
