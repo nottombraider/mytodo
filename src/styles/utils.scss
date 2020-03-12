@@ -1,7 +1,7 @@
 @import "colors";
 
 html{
-  font-size: 14px;
+  font-size: 16px;
   height: 100%;
 }
 
@@ -31,8 +31,11 @@ button{
   padding: .5rem 2rem;
 }
 
-.gg-scale{
-  transform: scale(var(--ggs,1.5));
+.gg{
+  &-list, &-add, &-trash{
+    --ggs: 2;
+  }
+
 }
 
 .gg-custom-color{
