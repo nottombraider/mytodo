@@ -1,6 +1,6 @@
 import React from 'react';
 
-function TaskListItem(props) {
+const TaskListItem = (props) => {
   const {
     task: { id, text, done },
     toggleTaskStatus,
@@ -14,6 +14,6 @@ function TaskListItem(props) {
       <input type="checkbox" defaultChecked={done} onClick={clickHandlerCheckbox} />
     </li>
   );
-}
+};
 
 export default TaskListItem;
