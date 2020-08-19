@@ -29,6 +29,7 @@
     "complexity": ["error", 2],
     "max-lines": ["error", 150],
     "padded-blocks": "error",
-    "no-multiple-empty-lines": ["error", { "max": 3 }]
+    "no-multiple-empty-lines": ["error", { "max": 3 }],
+    "import/prefer-default-export": "off"
   }
 }
