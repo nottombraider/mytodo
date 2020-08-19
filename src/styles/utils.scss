@@ -31,8 +31,9 @@ button{
   padding: .5rem 2rem;
 }
 
-.gg-scale{
-  transform: scale(var(--ggs,1.5));
+
+.gg-add, .gg-list{
+  --ggs: 2;
 }
 
 .gg-custom-color{
