@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useEffect } from 'react';
+import { useArray } from 'react-hanger/array';
 
 const LOCAL_STORAGE_KEY = 'toDoTaskList';
 
+
 export const useLocalStorage = (key = LOCAL_STORAGE_KEY) => {
-  const [state, setState] = useState(() => {
+  const getInitialState = () => {
     const initialStr = localStorage.getItem(key);
 
     if (initialStr) {
@@ -11,33 +13,14 @@ export const useLocalStorage = (key = LOCAL_STORAGE_KEY) => {
     }
 
     return [];
-  });
+  };
+  const [tasks, tasksActions] = useArray(getInitialState);
 
-  const setItem = (item, rewriteState) => {
-    const items = rewriteState ? [...item] : [...state, item];
-
-    items.sort((a, b) => a.id - b.id);
-
-    const itemsStr = JSON.stringify(items);
+  useEffect(() => {
+    const itemsStr = JSON.stringify(tasks);
 
     localStorage.setItem(key, itemsStr);
-
-    setState(items);
-  };
-
-  const updateItem = (itemId, status) => {
-    const item = state.find((item) => item.id === itemId);
-
-    item.done = status;
-
-    setItem(state, true);
-  };
-
-  const deleteCompletedItem = () => {
-    const undoneItems = state.filter((item) => !item.done);
-
-    setItem(undoneItems, true);
-  };
-
-  return [state, { setItem, updateItem, deleteCompletedItem }];
+  }, [tasks]);
+  
+  return [tasks, tasksActions];
 };

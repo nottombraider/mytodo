@@ -6,38 +6,30 @@
 
 
 .main-header{
-  align-items: center;
   justify-content: space-between;
-  margin: 4rem 2rem 3.5rem;
-  padding-right: .5rem;
+  padding: 1rem 5rem 0.5rem;
   color: $baseWhite;
 }
 
 .main-header-title{
   font-size: 3rem;
-  margin: 0;
+  display: block;
 }
 
 .main-header-title-description{
-  margin: 0;
   font-style: italic;
-  position: relative;
-  left: .1rem;
+  font-size: 1rem;
 }
 
 .main-layout{
-  height: 70%;
+  height: 60vh;
   padding: 3em 2rem 0;
   background-color: $baseWhite;
-  border-radius: 20px 20px 0 0;
   position: relative;
 }
 
 .add-task-container{
-  justify-content: space-between;
-  align-items: center;
   padding-bottom: 2rem;
-  width: 100%;
 }
 
 .add-task-input-field{
@@ -71,8 +63,5 @@
 }
 
 .button-delete{
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+
 }

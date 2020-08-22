@@ -1,11 +1,11 @@
 import React from 'react';
 
 const MainTitle = ({ title, titleDescription }) => (
-  <header className="flex center wrap main-header">
-    <div className="title-text-container">
-      <h1 className="main-header-title">{title}</h1>
+  <header className="flex align-center main-header">
+    <h1 className="title-text-container">
+      <span className="main-header-title">{title}</span>
       <span className="main-header-title-description">{titleDescription}</span>
-    </div>
+    </h1>
     <i className="gg-list gg-scale" />
   </header>
 );
