@@ -2,66 +2,85 @@
 @import "~css.gg/icons-compressed/icons.css";
 
 @import "utils";
-@import "colors";
+@import "variables";
 
+.main{
+  &-header{
+    justify-content: space-between;
+    padding: 2rem 5rem 6rem;
+    color: $baseWhite;
 
-.main-header{
-  justify-content: space-between;
-  padding: 1rem 5rem 0.5rem;
-  color: $baseWhite;
+    &-title{
+      font-size: 3rem;
+      display: block;
+
+      &-description{
+        font-style: italic;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &-layout{
+    height: 60vh;
+    position: relative;
+    background-color: $baseWhite;
+  }
 }
 
-.main-header-title{
-  font-size: 3rem;
-  display: block;
+.add-task {
+  &-container {
+    position: absolute;
+    width: 100%;
+    top: -40px;
+  }
+  &-form{
+    padding: 2rem;
+    justify-content: space-around;
+    width: 80%;
+    box-shadow: $box-shadow;
+    background-color: $baseWhite;
+  }
+  &-input-field{
+    width: 75%;
+    padding: 0 1rem;
+    line-height: 2.5rem;
+    border-bottom: $border-bottom;
+  }
 }
 
-.main-header-title-description{
-  font-style: italic;
-  font-size: 1rem;
-}
-
-.main-layout{
-  height: 60vh;
-  padding: 3em 2rem 0;
-  background-color: $baseWhite;
-  position: relative;
-}
-
-.add-task-container{
-  padding-bottom: 2rem;
-}
-
-.add-task-input-field{
-  width: 75%;
-  border: inherit;
-  height: 2rem;
-  margin: 0;
-  border-bottom: 1px solid $baseLightBlue;
-}
-
-.task-list{
-  list-style: none;
-  padding: 0;
-  width: 100%;
-  height: 60%;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-.task-item{
+.task-item {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1.5rem;
-  padding-bottom: .3rem;
-  border-bottom: 1px solid $baseLightBlue;
+  border-bottom: $border-bottom;
+
+  &-list {
+    padding: 2rem;
+    margin: auto;
+    margin-top: 6rem;
+    width: 80%;
+    height: 70%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    box-shadow: $box-shadow;
+  }
+
+  &-text{
+    word-break: break-word;
+    line-height: 1.5rem;
+    padding: 0.5rem;
+    max-width: 75%;
+  }
+
+  &-actions{
+    width: 60px;
+    justify-content: space-evenly;
+  }
 }
 
-.task-text{
-  word-break: break-word;
-  max-width: 75%;
-}
-
-.button-delete{
-
+.footer-text{
+  color: $baseWhite;
+  text-align: right;
+  padding: .5rem 2rem;
 }

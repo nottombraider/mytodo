@@ -6,7 +6,7 @@ const MainTitle = ({ title, titleDescription }) => (
       <span className="main-header-title">{title}</span>
       <span className="main-header-title-description">{titleDescription}</span>
     </h1>
-    <i className="gg-list gg-scale" />
+    <i className="gg-list" />
   </header>
 );
 

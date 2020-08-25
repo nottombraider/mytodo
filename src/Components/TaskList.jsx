@@ -7,7 +7,7 @@ const TaskList = ({ tasks, tasksActions }) => {
 
 
   return (
-    <ul className="flex column task-list">
+    <ul className="task-item-list">
       {sortedTasks.map((task) => (
         <TaskListItem
           task={task}

@@ -28,15 +28,18 @@ const AddTask = ({ addTask }) => {
   };
 
   return (
-    <form className="add-task-container" onSubmit={handleAddTask}>
-      <input
-        type="text"
-        placeholder="Enter your task here"
-        name="inputTaskField"
-        className="add-task-input-field"
-      />
-      <button type="submit"><i className="gg-add gg-scale gg-custom-color"> </i></button>
-    </form>
+      <div className="flex center add-task-container">
+        <form className="flex add-task-form" onSubmit={handleAddTask}>
+          <input
+              type="text"
+              placeholder="Enter your task here"
+              name="inputTaskField"
+              className="add-task-input-field"
+          />
+          <button type="submit"><i className="gg-add gg-scale gg-custom-color"> </i></button>
+        </form>
+      </div>
+
   );
 };
 
