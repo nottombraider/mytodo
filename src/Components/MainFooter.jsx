@@ -1,7 +1,7 @@
 import React from 'react';
 
 const MainFooter = ({ rights }) => (
-  <footer className="footer-text">
+  <footer className="main-footer">
     <span>
       <strong>{rights}</strong>
     </span>

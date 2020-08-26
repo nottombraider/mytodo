@@ -8,6 +8,7 @@
   &-header{
     justify-content: space-between;
     padding: 2rem 5rem 6rem;
+    background-color: $baseColor;
     color: $baseWhite;
 
     &-title{
@@ -22,9 +23,16 @@
   }
 
   &-layout{
-    height: 60vh;
     position: relative;
+    height: 60vh;
     background-color: $baseWhite;
+  }
+
+  &-footer{
+    background-color: $baseColor;
+  color: $baseWhite;
+  text-align: right;
+  padding: .5rem 2rem;
   }
 }
 
@@ -79,8 +87,74 @@
   }
 }
 
-.footer-text{
-  color: $baseWhite;
-  text-align: right;
-  padding: .5rem 2rem;
+
+/*mobile width*/
+@media (min-width: 320px) and (max-width: 760px) {
+  html, body, .root{
+    height: 100vh;
+  }
+
+  .root{
+    max-height: none;
+    justify-content: space-between;
+  }
+
+  .main-header{
+    padding: 1rem 3rem 3.5rem;
+  }
+
+  .main-layout{
+    height: 70vh;
+  }
+
+  .task-item-list{
+    margin-top: 4.5rem;
+  }
+
+}
+
+/*mobile height iphone 6/7/8*/
+@media  (height: 667px) {
+  .add-task-container{
+  top: -49px;
+  }
+
+  .task-item-list{
+    height: 55vh;
+    margin-top: 3.9rem;
+  }
+}
+
+/*mobile height Samsung S5, Motorola G4*/
+@media (height: 640px){
+  .add-task-container{
+    top: -45px;
+  }
+
+  .task-item-list{
+    height: 55vh;
+  }
+}
+
+/*mobile height pixel 2, iphone 6/7/8 plus*/
+@media (min-height: 668px) and (max-height: 800px) {
+  .add-task-container{
+    top: -59px;
+  }
+
+  .task-item-list{
+    height: 55vh;
+  }
+}
+
+/*mobile height pixel 2XL, iphone X*/
+@media (min-height: 801px) and (max-height: 830px) {
+  .add-task-container{
+    top: -69px;
+  }
+
+  .task-item-list{
+    height: 60vh;
+    margin-top: 3.5rem;
+  }
 }

@@ -23,7 +23,6 @@ button, input{
   max-width: 725px;
   max-height: 725px;
   min-height: 560px;
-  background-color: $baseColor;
   box-shadow: $box-shadow;
 }
 
@@ -58,8 +57,6 @@ button, input{
 .gg-custom-color{
   color: $baseColor;
 }
-
-
 
 .task-item-list {
   &::-webkit-scrollbar {
