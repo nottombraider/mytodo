@@ -20,7 +20,7 @@ export const useLocalStorage = (key = LOCAL_STORAGE_KEY) => {
     const itemsStr = JSON.stringify(tasks);
 
     localStorage.setItem(key, itemsStr);
-  }, [tasks]);
-  
+  }, [key, tasks]);
+
   return [tasks, tasksActions];
 };

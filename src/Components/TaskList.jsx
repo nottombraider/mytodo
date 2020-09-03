@@ -1,5 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
-import { useArray } from 'react-hanger/array';
+import React, { useMemo } from 'react';
 import TaskListItem from './TaskListItem';
 
 const TaskList = ({ tasks, tasksActions }) => {
