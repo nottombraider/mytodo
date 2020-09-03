@@ -137,7 +137,7 @@
 }
 
 /*mobile height pixel 2, iphone 6/7/8 plus*/
-@media (min-height: 668px) and (max-height: 800px) {
+@media (min-height: 668px) and (max-height: 800px) and (max-width: 760px) {
   .add-task-container{
     top: -59px;
   }
@@ -148,7 +148,7 @@
 }
 
 /*mobile height pixel 2XL, iphone X*/
-@media (min-height: 801px) and (max-height: 830px) {
+@media (min-height: 801px) and (max-height: 830px) and (max-width: 760px) {
   .add-task-container{
     top: -69px;
   }
