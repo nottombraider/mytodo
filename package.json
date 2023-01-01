@@ -10,7 +10,7 @@
     "normalize.css": "^8.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0",
+    "react-scripts": "5.0.1",
     "sass": "^1.24.4",
     "cogo-toast": "^4.2.3",
     "react-hanger": "^2.2.1"
